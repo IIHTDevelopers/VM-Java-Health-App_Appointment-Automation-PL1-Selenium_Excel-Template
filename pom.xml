@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.example</groupId>
-	<artifactId>HealthApp_Appointment</artifactId>
+	<artifactId>HealthApp_Appointment_Module_PL1</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
