@@ -141,8 +141,8 @@ public class appointment_Pages extends StartupPage {
 
 	/**@Test10
 	 * about this method verifyOptionIsSelectedFromDropdown() 
-	 * @param : get the data from JSON file as type Map<String, String> expectedData
-	 * @description : it will select the option as per JSON expected data
+	 * @param : get the data from Excel file as type Map<String, String> expectedData
+	 * @description : it will select the option as per Excel expected data
 	 * @return : String
 	 * @author : YAKSHA
 	 */
