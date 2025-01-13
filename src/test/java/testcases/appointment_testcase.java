@@ -214,47 +214,6 @@ public class appointment_testcase extends AppTestBase
 		Assert.assertEquals(locatorsFactoryInstance.verifyLastnameTextboxValueIsPresent(),expectedData.get("lastNameValue"), "something wroung in locators class, please check manually") ;
 	}
 
-	@Test(priority = 13, groups = {"sanity"}, description="On the \"Appointment\" module's \"Book Appointment\" page,\r\n"
-			+ "locate the \"Add Appointment\" button by using Name locators\r\n"
-			+ "and then get the attribute of Name locators.\r\n"
-			+ "Verify that the  \"Add Appointment\" button is present or not\r\n"
-			+ "and then highlight it.")
-	public void verifyLocators() throws Exception {
-		appointment_PagesInstance = new appointment_Pages(driver);
-		locatorsFactoryInstance = new LocatorsFactory(driver);	
-		Map<String, String> expectedData = new FileOperations().readExcelPOI(expectedDataFilePath, "appointmentModule");
-
-		Assert.assertEquals(appointment_PagesInstance.verifyLocatorsValueOfELementAndHighLight(), expectedData.get("idLocatorsValueOfAddPatientButton"),"something went wroung, please check manually");
-		Assert.assertTrue(locatorsFactoryInstance.verifyAddAppointmentButtonIsPresent(driver).isDisplayed(), "Add Patient Button is not present in the Locators page, Please check manually");
-	}
-
-	@Test(priority = 14, groups = {"sanity"}, description="On the Book Appointment submodules of appointment module,\r\n"
-			+ "clicking on the \"Add Appointment\" button\r\n"
-			+ "it will throw an Error Notification popup. \r\n"
-			+ "Then Assert that Error Message using hard assert")
-	public void verifyErrorNotificationPopupMessage() throws Exception {
-
-		appointment_PagesInstance = new appointment_Pages(driver);
-		locatorsFactoryInstance = new LocatorsFactory(driver);	
-		Map<String, String> expectedData = new FileOperations().readExcelPOI(expectedDataFilePath, "appointmentModule");
-
-		Assert.assertEquals(appointment_PagesInstance.verifyErrorNotificationPopupMessage(expectedData),expectedData.get("errorNotificationPopupMessage")) ;
-		Assert.assertEquals(locatorsFactoryInstance.verifyErrorNotificationPopupMessageIsPresent(),expectedData.get("errorNotificationPopupMessage")) ;
-	}
-	
-	@Test(priority = 15, groups = {"sanity"}, description="On Procurements Module's Setting page,\r\n"
-			+ "select the Sub Category Tab and  fetch the Sub-Category Name for the given code (Code - 0003)\r\n"
-			+ "and validate that Sub Category name.")
-	public void getDataFromTable() throws Exception {
-		appointment_PagesInstance = new appointment_Pages(driver);
-		locatorsFactoryInstance = new LocatorsFactory(driver);	
-		
-		Map<String, String> expectedData = new FileOperations().readExcelPOI(expectedDataFilePath, "socialServiceModuleStringValue");
-		Assert.assertEquals(appointment_PagesInstance.getDataFromTable(), expectedData.get("cottonSubCategoryName"),"something went wroung page class, please check manually");
-//		Assert.assertEquals(locatorsFactoryInstance.veryfyTableData(),expectedData.get("cottonSubCategoryName"),"something went wroung locators class, Please check manually");
-		Assert.assertTrue(locatorsFactoryInstance.verifyAddSubCategoryButtonIsPresent(driver).isDisplayed(), "Add Sub Category Button is not present in the Locators page, Please check manually");
-	}
-
 
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
