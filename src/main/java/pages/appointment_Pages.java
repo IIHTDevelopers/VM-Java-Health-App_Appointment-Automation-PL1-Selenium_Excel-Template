@@ -265,36 +265,5 @@ public class appointment_Pages extends StartupPage {
 		return null;
 	}
 
-	/**@Test13
-	 * about this method verifyLocatorsValueOfELement() 
-	 * @param : Map<String, String>
-	 * @description : verify locators value of text box and send value to the text box and highlight that text box
-	 * @return : String
-	 * @author : YAKSHA
-	 */
-	public String verifyLocatorsValueOfELementAndHighLight() throws Exception {
-		return null;
-	}
 
-	/**@Test14
-	 * about this method verifyErrorNotificationPopupMessage() 
-	 * @param : null
-	 * @description : verify the error message using hard assert
-	 * @return : String
-	 * @author : YAKSHA
-	 */
-	public String verifyErrorNotificationPopupMessage(Map<String, String> expectedData) throws Exception {
-		return null;
-	}
-
-	/**@Test15
-	 * about this method getDataFromTable() 
-	 * @param : null
-	 * @description : it will fetch the data from the table
-	 * @return : Boolean
-	 * @author : YAKSHA
-	 */
-	public String getDataFromTable() throws Exception {
-		return null;
-	}
 }
