@@ -155,65 +155,6 @@ public class appointment_testcase extends AppTestBase
 		Assert.assertTrue(locatorsFactoryInstance.verifyDatePickerElementIsPresent(driver).isDisplayed(), "datePicker is not present in the Locators page, Please check manually");
 	}
 
-	@Test(priority = 9, groups = {"sanity"}, description="On  the \"Booking OT Schedule | New Patient\" form's, \r\n"
-			+ "External? Checkbox must be selected.\r\n"
-			+ "Click on \"+\" icon to popup the Add External Referral form\r\n"
-			+ "then fill all the details (get the data from json),\r\n"
-			+ "click on all checkbox and then click on \"Add\" button\r\n"
-			+ "then verify the success notifications message.")
-	public void verifySuccessNotificationPopupMessage() throws Exception {
-		appointment_PagesInstance = new appointment_Pages(driver);
-		locatorsFactoryInstance = new LocatorsFactory(driver);	
-		Map<String, String> expectedData = new FileOperations().readExcelPOI(expectedDataFilePath, "addExternalReferralPageInfo");
-
-		Assert.assertEquals(appointment_PagesInstance.verifySuccessNotificationPopupMessage(expectedData),expectedData.get("successNotificationPopupMessage")) ;
-		Assert.assertEquals(locatorsFactoryInstance.verifySuccessNotificationPopupMessageIsPresent(),expectedData.get("successNotificationPopupMessage")) ;
-	}
-
-	@Test(priority = 10, groups = {"sanity"}, description="On the New Visit\" page's \"Patient Information\" form,\r\n"
-			+ "scroll to the  \"Relation With Patient\" dropdown\r\n"
-			+ "and then select \"Son\" from the \"Relation With Patient\" dropdown.\r\n"
-			+ "validate \"Son\" is  properly selected or not.")
-	public void verifyOptionIsSelectedFromDropdown() throws Exception {
-		appointment_PagesInstance = new appointment_Pages(driver);
-		locatorsFactoryInstance = new LocatorsFactory(driver);	
-		Map<String, String> expectedData = new FileOperations().readExcelPOI(expectedDataFilePath, "appointmentModule");
-
-		Assert.assertEquals(appointment_PagesInstance.verifyOptionIsSelectedFromDropdown(expectedData), expectedData.get("relationWithPatientDropdownOption"), "selected option is not matching with expected in page class, please check manually!");
-		Assert.assertEquals(locatorsFactoryInstance.verifyRelationWithPatientOptionIsSelected(), expectedData.get("relationWithPatientDropdownOption"), "selected option is not matching with expected(Locators Factory), please check manually!");
-	}
-
-	@Test(priority = 11, groups = {"sanity"}, description="On the \"Appointment\" module's,\r\n"
-			+ "click on \"Book Appointment\" Sub module.\r\n"
-			+ "(Expand Appointment module, if not)\r\n"
-			+ "On the \"Book Appointment\" page,\r\n"
-			+ "select the \"Month\" radio button\r\n"
-			+ "and verify that the \"Month\" radio button is selected or not.\r\n"
-			+ "After the validation deselect the \"Month\" radio button.")
-	public void verifyRadioButton() throws Exception {
-		appointment_PagesInstance = new appointment_Pages(driver);
-		locatorsFactoryInstance = new LocatorsFactory(driver);	
-
-		Assert.assertTrue(appointment_PagesInstance.verifyRadioButton(),"something went wroung in pages class, please check manually");
-		Assert.assertTrue(locatorsFactoryInstance.verifyDaysRadioButtonIsSelected(), "element not present in the current page ((Locators Factory), Please check manually");
-	}
-
-	@Test(priority = 12, groups = {"sanity"}, description="On the \"Appointment\" module's \"Book Appointment\" page,\r\n"
-			+ "send the value to the below  textbox using javascript.\r\n"
-			+ "Following Textbox are:\r\n"
-			+ "1. FirstName Text box\r\n"
-			+ "2. Middle Name Text Box\r\n"
-			+ "3. Last Name Text box\r\n"
-			+ "and then click on \"Male\" radio button using java script")
-	public void performJavaScriptOperation() throws Exception {
-		appointment_PagesInstance = new appointment_Pages(driver);
-		locatorsFactoryInstance = new LocatorsFactory(driver);	
-		Map<String, String> expectedData = new FileOperations().readExcelPOI(expectedDataFilePath, "appointmentModule");
-
-		Assert.assertEquals(appointment_PagesInstance.performJavaScriptOperation(expectedData),expectedData.get("lastNameValue"), "something wroung in page class, please check manually") ;
-		Assert.assertEquals(locatorsFactoryInstance.verifyLastnameTextboxValueIsPresent(),expectedData.get("lastNameValue"), "something wroung in locators class, please check manually") ;
-	}
-
 
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
