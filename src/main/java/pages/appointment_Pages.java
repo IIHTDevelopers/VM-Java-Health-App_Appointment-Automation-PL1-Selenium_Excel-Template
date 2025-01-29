@@ -219,51 +219,5 @@ public class appointment_Pages extends StartupPage {
 		return false;
 	}
 
-	/**@Test9
-	 * about this method verifySuccessNotificationPopupMessage() 
-	 * @param : null
-	 * @description : handle the notification pop up
-	 * @return : String
-	 * @author : YAKSHA
-	 */
-	public String verifySuccessNotificationPopupMessage(Map<String, String> expectedData) throws Exception {
-		return null;
-	}
-
-	/**@Test10
-	 * about this method verifyOptionIsSelectedFromDropdown() 
-	 * @param : get the data from Excel file as type Map<String, String> expectedData
-	 * @description : it will select the option as per Excel expected data
-	 * @return : String
-	 * @author : YAKSHA
-	 */
-	public String verifyOptionIsSelectedFromDropdown(Map<String, String> expectedData) throws Exception {
-
-		return null;	
-	}
-
-	/**@Test11
-	 * about this method verifyRadioButton() 
-	 * @param : null
-	 * @description :
-	 * @return : Boolean
-	 * @author : YAKSHA
-	 */
-	public Boolean verifyRadioButton() throws Exception {
-		return false;
-	}
-
-	/**@Test12
-	 * about this method performJavaScriptOperation() 
-	 * @param : null
-	 * @description : 
-	 * @return : String
-	 * @author : YAKSHA
-	 */
-	public String performJavaScriptOperation(Map<String, String> expectedData) throws Exception {
-
-		return null;
-	}
-
 
 }
